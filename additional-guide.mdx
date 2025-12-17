@@ -1,0 +1,338 @@
+---
+title: Practical JSON workflows
+description: Guided workflows for using JSONViewer.AI to debug API responses, prepare data for analysis, and review JSON configs efficiently.
+---
+
+## Overview
+
+This guide shows how to apply JSONViewer.AI to real-world tasks once you already know the basics. It focuses on three common workflows for web developers, API developers, and data analysts.
+
+<Columns cols={3}>
+  <Card title="Debug an API response" icon="book-open" href="#workflow-api-debugging">
+    Use syntax highlighting, validation, and tree view to inspect complex JSON responses.
+  </Card>
+  <Card title="Clean data for analysis" icon="play-circle" href="#workflow-data-cleaning">
+    Reformat and validate JSON datasets before loading them into analytics tools.
+  </Card>
+  <Card title="Review JSON configs" icon="code" href="#workflow-config-review">
+    Quickly review and compare JSON configuration files during development.
+  </Card>
+</Columns>
+
+JSONViewer.AI always processes your JSON locally in the browser. You paste or upload JSON, then validate, beautify, and inspect it using both a formatted view and a tree view.
+
+If you are new to the app, start with the [Introduction](/introduction) and [Quickstart](/quickstart), then return here for these deeper workflows.
+
+## Workflow 1: Debugging an API response {#workflow-api-debugging}
+
+Use this workflow when you receive an unexpected API response and need to understand what is going on.
+
+<Tabs>
+  <Tab title="When to use this" icon="info">
+
+You are calling an HTTP API and you see:
+
+- Missing or unexpected fields in the response.
+- Nested objects that are hard to inspect in your editor or browser console.
+- JSON errors such as trailing commas or invalid structure.
+
+JSONViewer.AI helps you validate and explore the JSON structure quickly.
+
+  </Tab>
+  <Tab title="Who this is for" icon="users">
+
+- Web developers inspecting client-side fetch or XHR responses.
+- API developers debugging server responses or integration tests.
+- Anyone working with REST or JSON-based APIs who needs to see the full response clearly.
+
+  </Tab>
+</Tabs>
+
+<Steps>
+  <Step title="Capture the JSON response" icon="download">
+
+Copy the raw JSON payload from:
+
+- Your browser network panel.
+- A tool such as `curl` or an API client.
+- A log file, test output, or error report.
+
+Make sure you copy the full JSON body, not just a screenshot.
+
+  </Step>
+
+  <Step title="Paste and validate in JSONViewer.AI" icon="check-circle">
+
+Open JSONViewer.AI and paste the JSON into the input area, or choose the upload option if you have the response saved as a file.
+
+Use the validation feature to check that the JSON is well-formed. If there are errors, the viewer will highlight the problem area so you can spot:
+
+- Missing or extra commas.
+- Unclosed brackets or quotes.
+- Truncated responses.
+
+  </Step>
+
+  <Step title="Beautify and inspect the structure" icon="chevron-right">
+
+Use the beautify or pretty-print action to reformat the JSON with indentation and line breaks. Then:
+
+- Scan the syntax-highlighted view to confirm key fields such as `status`, `message`, or `data`.
+- Switch to the tree view to expand or collapse nested objects and arrays.
+- Compare what you see to the API contract or your expectations.
+
+This makes it easier to find:
+
+- Fields that are `null` or missing.
+- Values in the wrong type, such as strings instead of numbers.
+- Deeply nested keys that are hard to see in a flat view.
+
+  </Step>
+
+  <Step title="Narrow down the problem" icon="target">
+
+Use the tree view to focus on problematic branches of the response:
+
+- Drill into error objects to see detailed error codes.
+- Compare the current response with a known-good response by opening them in separate browser tabs.
+- Copy clean, pretty-formatted snippets to share in bug reports or chat.
+
+Once you understand the problematic structure, adjust your API or client code accordingly.
+
+  </Step>
+</Steps>
+
+## Workflow 2: Cleaning JSON data before analysis {#workflow-data-cleaning}
+
+Data analysts often receive JSON logs, exports, or event streams that need basic cleanup before loading into analytics tools.
+
+<Callout kind="info">
+
+JSONViewer.AI is designed for interactive viewing and light transformation, not heavy ETL. Use it to validate, inspect, and spot issues before you run larger batch jobs.
+
+</Callout>
+
+<Steps>
+  <Step title="Load a sample of your dataset" icon="upload">
+
+Select a representative slice of your JSON data:
+
+- A single log file.
+- A small exported sample from an event stream.
+- A subset of records from a data lake or object store.
+
+Paste the content into JSONViewer.AI or upload the file. If the data is newline-delimited JSON, you can paste a smaller subset of lines at a time.
+
+  </Step>
+
+  <Step title="Validate and identify structural issues" icon="alert-triangle">
+
+Run validation to confirm that the sample is valid JSON. Use the syntax highlighting and error messages to locate:
+
+- Lines that are not valid JSON.
+- Mixed structures (for example, some items are objects, others are arrays).
+- Fields that change type across records.
+
+If validation fails because the dataset is line-based, focus on one or a few lines at a time to identify bad records.
+
+  </Step>
+
+  <Step title="Use beautify and tree view to understand fields" icon="bar-chart">
+
+Use beautify to reformat the JSON, then open tree view to explore typical records:
+
+- Expand a few example objects to list commonly present fields.
+- Note field names, types, and nesting depth.
+- Identify fields that will become columns or dimensions in your analytics tools.
+
+Use this understanding to design downstream transformations in your scripting or data pipeline tools.
+
+  </Step>
+
+  <Step title="Extract a clean schema example" icon="check-circle">
+
+After you confirm the structure:
+
+- Copy a single, representative record from the beautified view.
+- Use it as a documentation example of the dataset structure.
+- Share it with engineers or teammates when coordinating changes.
+
+Because everything stays in your browser, you can safely inspect sensitive data samples without uploading them to external services.
+
+  </Step>
+</Steps>
+
+## Workflow 3: Reviewing JSON configuration files {#workflow-config-review}
+
+Developers frequently work with JSON-based configuration files such as app settings, build configs, or feature flags. JSONViewer.AI helps you review these files without editing them directly.
+
+<Tabs>
+  <Tab title="Config examples" icon="code">
+
+Common JSON configuration scenarios:
+
+- Frontend or backend app settings.
+- Feature flags or rollout configurations.
+- Build or deployment configuration files.
+
+  </Tab>
+  <Tab title="Why use JSONViewer.AI" icon="shield">
+
+- Validate that config files are syntactically correct before committing.
+- Use tree view to quickly compare related sections between versions.
+- Read complex nested options more easily than in a raw text editor.
+
+  </Tab>
+</Tabs>
+
+<Steps>
+  <Step title="Open the configuration JSON" icon="folder-open">
+
+From your editor or repository:
+
+- Copy the full config file content.
+- Or export a generated JSON config from your build system.
+
+Paste or upload the JSON into JSONViewer.AI.
+
+  </Step>
+
+  <Step title="Validate and beautify the config" icon="check">
+
+Run validation to catch syntax issues such as:
+
+- Trailing commas after the last item.
+- Incorrect quoting of keys or values.
+- Mismatched brackets or braces.
+
+Then use beautify to normalize indentation and spacing so that the structure is consistent and easier to read.
+
+  </Step>
+
+  <Step title="Inspect key sections in tree view" icon="search">
+
+Switch to the tree view to:
+
+- Expand logical sections such as `database`, `features`, or `logging`.
+- Confirm that required keys are present and set to expected values.
+- Quickly see nested options without scrolling through long files.
+
+If you have multiple versions, open them in separate browser tabs and toggle between them to visually compare important branches.
+
+  </Step>
+
+  <Step title="Share safe snippets with your team" icon="users">
+
+When you find a misconfiguration or you need a review:
+
+- Copy just the relevant branch from the beautified view.
+- Paste it into code review comments or documentation.
+
+This avoids sharing unnecessary secrets while still providing clear context around the configuration.
+
+  </Step>
+</Steps>
+
+## Example JSON snippets and usage patterns
+
+Use these examples as starting points for pasting into JSONViewer.AI when exploring the workflows above.
+
+<CodeGroup tabs="API response,Event log" show-lines={true}>
+
+```json
+{
+  "status": "error",
+  "message": "Invalid request payload",
+  "errors": [
+    {
+      "field": "email",
+      "code": "invalid_format",
+      "detail": "Email must contain an at symbol"
+    }
+  ],
+  "requestId": "a1b2c3d4",
+  "timestamp": "2024-01-01T12:00:00Z"
+}
+```
+
+```json
+{
+  "event": "user_signup",
+  "timestamp": "2024-01-01T12:00:00Z",
+  "user": {
+    "id": 123,
+    "plan": "pro",
+    "country": "US"
+  },
+  "metadata": {
+    "source": "landing_page",
+    "campaign": "winter_promo"
+  }
+}
+```
+
+</CodeGroup>
+
+You can:
+
+- Paste these snippets into JSONViewer.AI to practice validation and tree exploration.
+- Modify fields to match your own API or event structures.
+- Use variations of them when debugging or documenting your own systems.
+
+## Troubleshooting and FAQs for these workflows
+
+<ExpandableGroup>
+  <Expandable title="Why does my JSON fail validation even though the API says it is fine?" default-open="true">
+
+This usually means the text you pasted is not exactly the raw JSON body. Common issues:
+
+- Extra text before or after the JSON, such as log prefixes or HTTP headers.
+- Multiple JSON objects pasted together without wrapping them in an array.
+- Error pages or HTML responses instead of JSON.
+
+Try copying only the response body from your tool, or paste a smaller portion at a time to isolate the problem. For general usage questions, see the [FAQ](/faq).
+
+  </Expandable>
+
+  <Expandable title="My dataset is too large to paste. How should I use JSONViewer.AI?" default-open="false">
+
+JSONViewer.AI works best with small to medium JSON samples. For very large datasets:
+
+- Select a representative subset of records.
+- Paste or upload only a single file or chunk at a time.
+- Use JSONViewer.AI to understand the structure and potential issues, then apply the findings to your larger processing pipeline.
+
+If you need help choosing a good sample, review the basic recommendations in the main [Guide](/guide).
+
+  </Expandable>
+
+  <Expandable title="Can I safely inspect sensitive data in JSONViewer.AI?" default-open="false">
+
+Yes. JSONViewer.AI processes JSON locally in your browser; the data is not sent to a server for processing. This makes it suitable for inspecting confidential responses, configuration files, or data samples, subject to your local device and browser security policies.
+
+For more on how the app behaves, revisit the [Introduction](/introduction).
+
+  </Expandable>
+</ExpandableGroup>
+
+## Next steps
+
+Use these workflows as building blocks in your daily development or analysis routine.
+
+<Columns cols={3}>
+  <Card title="Review the basics" icon="rocket" href="/quickstart">
+
+Revisit the [Quickstart](/quickstart) if you want a refresher on core actions such as pasting JSON, validating, and switching views.
+
+  </Card>
+  <Card title="Explore more guides" icon="compass" href="/guide">
+
+Read the main [Guide](/guide) for additional patterns, such as working with team workflows or documenting common JSON shapes.
+
+  </Card>
+  <Card title="Check common questions" icon="help-circle" href="/faq">
+
+Visit the [FAQ](/faq) for answers to recurring questions and clarifications about how JSONViewer.AI behaves.
+
+  </Card>
+</Columns>

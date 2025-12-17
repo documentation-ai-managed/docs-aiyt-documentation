@@ -1,120 +1,150 @@
 ---
-title: Welcome to JSON Viewer
-description: Discover the JSON Viewer, a free online tool designed to simplify working with JSON data by providing easy viewing, validation, and beautification features.
+title: JSONViewer.ai Documentation
+description: Learn what JSONViewer.ai is, who it is for, and how to quickly view, format, and validate JSON in your browser with no setup.
 ---
+
+## Introduction
+
+JSONViewer.ai is a free, web-based JSON viewer, formatter (beautifier), and validator. It helps you turn cluttered JSON into a clean, readable format, check that the structure is valid, and explore nested data without getting lost.
+
+Everything runs directly in your browser. There is no installation, signup, or account required. You simply open the site, paste or upload your JSON, and start working with it immediately.
 
 ## Overview
 
-JSON Viewer offers you a free online tool to view, validate, and beautify JSON data effortlessly. You paste your JSON into the editor, and it instantly formats it for readability, checks for syntax errors, and highlights structure. This eliminates manual parsing struggles, making it ideal for developers, testers, and anyone handling API responses or configuration files.
+JSONViewer.ai is designed to make everyday JSON tasks fast and approachable for both technical and non-technical users. It is helpful whenever you need to read, clean up, or verify JSON without writing code or using complex tools.
 
-<Columns cols={3}>
-  <Card title="View JSON" icon="eye" href="/docs/viewing">
-    Explore nested structures with collapsible trees and syntax highlighting.
-  </Card>
-  <Card title="Validate JSON" icon="check-circle" href="/docs/validation">
-    Detect errors instantly and get precise line numbers for fixes.
-  </Card>
-  <Card title="Beautify JSON" icon="sparkles" href="/docs/beautify">
-    Transform minified JSON into readable, indented format in one click.
-  </Card>
-</Columns>
+It is commonly used by:
 
-## Key Benefits
+- **QA engineers** who need to inspect responses, compare payloads, and confirm that data is structured correctly.
+- **Product managers** who review JSON samples shared by engineering or vendors.
+- **Support teams** who receive JSON logs or exports from customers and need to understand what is going on.
+- **Developers** who want a quick way to view, validate, and reformat JSON outside of their editor or IDE.
+- **Non-technical users** who occasionally receive JSON in tickets, emails, or tools and just want it to be readable.
 
-You gain several advantages using JSON Viewer:
+Typical use cases include:
 
-- **Speed**: Process large JSON files without downloads or installations.
-- **Accuracy**: Real-time validation catches errors like missing commas or invalid keys.
-- **Simplicity**: No account required; access features immediately in your browser.
-- **Portability**: Works on any device with a modern browser.
+- Inspecting JSON responses from web services or tools.
+- Reviewing JSON logs, exports, or debug output for issues.
+- Validating configuration files or feature flags stored as JSON.
+- Cleaning up JSON before adding it to documentation, tickets, or knowledge base articles.
+- Converting compact JSON into a human-friendly format for review and discussion.
 
-<Callout kind="success">
-  JSON Viewer is completely free with no usage limits or hidden fees.
-</Callout>
+## Quickstart
 
-## Quick Start
+Follow these steps for your first time using JSONViewer.ai:
 
-Follow these steps to get started with your JSON data:
+1. **Open the site**
 
-<Steps>
-  <Step title="Paste Your JSON" icon="clipboard">
-    Copy JSON from APIs, logs, or files and paste it into the input area.
-  </Step>
-  <Step title="View and Navigate" icon="zoom-in">
-    Use the tree view to expand/collapse objects and arrays.
-  </Step>
-  <Step title="Validate" icon="shield">
-    Click Validate to scan for errors. Fix issues using highlighted feedback.
-  </Step>
-  <Step title="Beautify" icon="magic">
-    Select Beautify to reformat. Copy the output for use elsewhere.
-  </Step>
-</Steps>
+   Go to: `https://jsonviewer.ai/` in any modern web browser.
 
-## Common Use Cases
+2. **Paste or upload JSON**
 
-Switch between modes based on your needs:
+   - Paste JSON directly into the main input area, or  
+   - Use the upload option (if available in your browser) to load a JSON file.
 
-<Tabs>
-  <Tab title="API Response" icon="cloud">
-    Handle responses like this unformatted data:
-    
-````javascript
-const apiResponse=`{"user":{"id":123,"name":"Alice Johnson","email":"alice@example.com","orders":[{"id":456,"total":99.99},{"id":789,"total":149.99}]}}`;
-````
+3. **View and format (beautify) JSON**
 
-    JSON Viewer expands it into a navigable tree.
-  </Tab>
-  <Tab title="Config File" icon="settings">
-    Beautify settings:
-    
-````json
-{"database":{"host":"localhost","port":5432,"credentials":{"user":"admin","pass":"secret"}},"cache":{"enabled":true,"ttl":3600}}
-````
-  </Tab>
-  <Tab title="Error Validation" icon="alert-triangle">
-    Spot issues in malformed JSON:
-    
-````json
-{"items": [1,2,3 "four", 5]}  // Missing comma detected
-````
-  </Tab>
-</Tabs>
+   - Use the Beautify or View action to reformat your JSON.
+   - The tool will add indentation and line breaks so the structure is easy to read.
 
-## Before and After Beautification
+4. **Validate the JSON**
 
-See the transformation power:
+   - Click the Validate option to check that your JSON is well-formed.
+   - If there are problems, the tool will show you where the syntax error occurs.
 
-<CodeGroup tabs="Raw,Beautified">
-  ```json
-{"results":[{"id":1,"title":"Sample Post","views":150},{"id":2,"title":"Another Post","views":250},{"id":3,"title":"Final Post","views":300}],"total":3}
-  ```
-  ```json
-{
-  "results": [
-    {
-      "id": 1,
-      "title": "Sample Post",
-      "views": 150
-    },
-    {
-      "id": 2,
-      "title": "Another Post",
-      "views": 250
-    },
-    {
-      "id": 3,
-      "title": "Final Post",
-      "views": 300
-    }
-  ],
-  "total": 3
-}
-  ```
-</CodeGroup>
+5. **Search keys and values**
 
-<Expandable title="Advanced Tips" default-open="false">
-  Customize indentation (2-4 spaces), toggle line numbers, or export as JSON/CSV. For huge payloads `{>1MB}`, enable streaming mode to avoid browser lag.
-</Expandable>
+   - Use the search box to find specific keys, values, or fragments within the JSON.
+   - This is useful for large payloads where scrolling is difficult.
 
-JSON Viewer streamlines your workflow, saving time on tedious JSON tasks. Start using it today for cleaner data handling.
+6. **Copy the formatted output**
+
+   - Once you are satisfied with the formatted and validated JSON, copy it from the output area.
+   - Paste it back into your application, documentation, ticket, or any other tool you use.
+
+## Key Features
+
+### JSON formatting and beautification
+
+- Automatically reformats JSON with clear indentation and line breaks.
+- Makes nested objects and arrays much easier to read and review.
+- Helps you prepare JSON for sharing in tickets, documentation, and reviews.
+
+### Expand and collapse structure (tree view)
+
+- Shows JSON as an interactive, hierarchical structure.
+- Lets you expand or collapse objects and arrays to focus on the parts you care about.
+- Reduces scrolling and makes large payloads more manageable.
+
+### JSON validation
+
+- Checks your JSON for structural issues such as missing commas or unmatched brackets.
+- Highlights where the error occurs so you can quickly correct it.
+- Helps you confirm that JSON is safe to use in other tools or systems.
+
+### Search within JSON
+
+- Allows you to search for specific keys, values, or phrases.
+- Helps you quickly locate relevant sections in large or complex JSON documents.
+- Reduces time spent manually scanning through data.
+
+### Ease of use
+
+- Clean, focused interface with clear actions like Validate and Beautify/View.
+- Works well for both occasional and frequent users.
+- No need to learn commands or configuration options.
+
+### No setup required
+
+- Runs entirely in the browser, with no installation or plugins.
+- Does not require an account, login, or registration.
+- Accessible from any modern browser, making it easy to share a link with teammates.
+
+### Local processing and security
+
+- Validation and beautification are performed locally in your browser.
+- JSON is not sent to a remote server as part of normal use.
+- This reduces exposure risk when working with internal or confidential data.
+
+## FAQs
+
+### Do I need an account?
+
+No. JSONViewer.ai does not require an account, login, or registration. You can open the site in your browser and start using it immediately.
+
+### What JSON formats are supported?
+
+JSONViewer.ai supports standard JSON text. This includes:
+
+- JSON objects and arrays.
+- Nested structures with strings, numbers, booleans, and null values.
+- Typical configuration and data payloads that follow standard JSON syntax.
+
+If your content is valid JSON, the tool should be able to view, format, and validate it.
+
+### Why am I seeing validation errors?
+
+Validation errors usually mean the JSON is not well-formed. Common issues include:
+
+- Missing commas between items.
+- Extra trailing commas.
+- Unmatched or missing brackets or braces.
+- Keys or strings that are not wrapped in double quotes.
+
+When you validate, the tool will point to the location where the problem was detected. Fix the highlighted issue and run validation again.
+
+### Can I use it for testing?
+
+Yes. JSONViewer.ai is useful for testing scenarios such as:
+
+- Checking that JSON examples you share in documentation or tickets are valid.
+- Verifying that JSON from tools or exports is correctly formatted.
+- Manually exploring how different JSON structures look before using them elsewhere.
+
+It is a visual aid and validation helper rather than a full testing framework, and it does not replace automated tests in your applications.
+
+### Is it safe to paste sensitive data?
+
+JSONViewer.ai processes your JSON locally in your browser, and the validation and formatting do not require sending data to a server. This helps keep your data private.
+
+That said, you should still follow your organization's security policies. Avoid pasting highly sensitive information (such as passwords, full payment details, or personal identifiers) when it is not strictly necessary, and consider masking or anonymizing data before using any online tool.

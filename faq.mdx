@@ -1,165 +1,219 @@
 ---
 title: Frequently Asked Questions
-description: Find answers to common questions about using JSON Viewer, troubleshooting issues, and best practices for handling JSON data.
+description: Answers to common questions about JSONViewer.AI, including capabilities, validation, beautification, and data privacy.
 ---
 
-## Common Usage Questions
+## Common questions about JSONViewer.AI
 
-JSON Viewer helps you parse, validate, and format JSON data quickly. Use it to inspect API responses or debug nested objects.
+JSONViewer.AI is a free, browser-based JSON viewer, validator, and beautifier for working with JSON data.
 
 <ExpandableGroup>
 
-<Expandable title="What types of JSON can I view?">
+<Expandable title="What is JSONViewer.AI?">
 
-You can load any valid JSON, including arrays, objects, and nested structures from APIs or files. Paste raw text or upload `.json` files up to 10MB.
+JSONViewer.AI is an online tool that helps you work with JSON data in your browser. It focuses on three main tasks:
 
-For example, view this user profile:
+- Viewing JSON with syntax highlighting and a collapsible tree view
+- Validating JSON structure with clear error messages
+- Beautifying (prettifying) JSON so it is easier to read
+
+It is especially useful when you copy JSON from APIs, logs, or configuration files and want to inspect or debug it quickly.
+
+</Expandable>
+
+<Expandable title="Who is JSONViewer.AI for?">
+
+JSONViewer.AI is designed for:
+
+- **Web developers** inspecting JSON from front-end apps or browser tools
+- **API developers** working with request and response payloads
+- **Data analysts** exploring JSON exports from services or data pipelines
+
+If you regularly handle JSON and want a quick way to read, validate, or format it, JSONViewer.AI is for you.
+
+</Expandable>
+
+<Expandable title="Is JSONViewer.AI free to use?">
+
+Yes. JSONViewer.AI is free to use in your browser. You can paste JSON, validate it, and beautify it without creating an account or paying for access.
+
+</Expandable>
+
+<Expandable title="What kinds of JSON does JSONViewer.AI support?">
+
+JSONViewer.AI supports standard JSON, including:
+
+- Top-level objects and arrays
+- Nested objects and arrays
+- Strings, numbers, booleans, and `null` values
+
+For example, this is valid JSON you can view, validate, and beautify:
 
 ```json
 {
   "user": {
-    "id": 12345,
-    "name": "Jane Doe",
-    "email": "jane@example.com",
-    "preferences": {
-      "theme": "dark",
-      "notifications": true
-    }
+    "id": 1,
+    "name": "Ada",
+    "tags": ["developer", "admin"],
+    "active": true
   }
 }
 ```
 
+As long as your input is valid JSON, JSONViewer.AI can format and display it with syntax highlighting and a tree view.
+
 </Expandable>
 
-<Expandable title="How do I beautify unformatted JSON?">
+<Expandable title="How do I beautify or prettify JSON?">
 
-Copy and paste minified JSON into the editor. Click `Beautify` to add indentation and line breaks automatically.
+1. Copy your unformatted or minified JSON.
+2. Paste it into the JSONViewer.AI editor.
+3. Use the beautify or format action to automatically:
+   - Add indentation
+   - Insert line breaks
+   - Align nested structures
+
+For example, this minified input:
+
+```json
+{"id":1,"name":"Compact","active":true}
+```
+
+is reformatted into a more readable structure:
+
+```json
+{
+  "id": 1,
+  "name": "Compact",
+  "active": true
+}
+```
 
 <Callout kind="tip">
-Enable `Auto-format on paste` in settings for instant beautification.
+
+Beautify first, then use the tree view to quickly expand or collapse nested sections of your data.
+
 </Callout>
 
 </Expandable>
 
-<Expandable title="Does it support JSON validation?">
+<Expandable title="Does JSONViewer.AI validate my JSON?">
 
-Yes, validation runs in real-time. Errors highlight in red with details like `Unexpected token at line 5`.
+Yes. JSONViewer.AI validates your JSON structure and helps you spot errors.
+
+When your JSON is invalid, the viewer:
+
+- Highlights the problematic area
+- Shows an error message with the reason (for example, an unexpected character or missing quote)
+
+You can then fix the JSON directly in the editor and re-validate immediately.
+
+</Expandable>
+
+<Expandable title="Does JSONViewer.AI support tree view and syntax highlighting?">
+
+Yes. JSONViewer.AI provides:
+
+- **Syntax highlighting** to visually distinguish keys, values, strings, and numbers
+- A **tree view** so you can expand and collapse nested objects and arrays
+
+This makes it easier to:
+
+- Navigate deeply nested structures
+- Focus on a specific part of your JSON
+- Compare sections without scrolling through long raw text
+
+</Expandable>
+
+<Expandable title="Is my data private? Does my JSON get uploaded to a server?">
+
+JSONViewer.AI processes your JSON **locally in your browser**. According to the homepage:
+
+- Validation and beautification are performed on your device
+- JSON is not uploaded to a remote server for processing
+
+This means your data stays in your browser tab while you work with it.
+
+<Callout kind="info">
+
+Close the tab or clear the editor when you finish to remove your JSON from view. Since processing is local, there is no server-side copy of your data.
+
+</Callout>
+
+</Expandable>
+
+<Expandable title="Can I use JSONViewer.AI for non-JSON data formats?">
+
+No. JSONViewer.AI is focused specifically on JSON.
+
+If your data is not valid JSON, you will need to convert it to JSON first. Once it is valid JSON, you can paste it into the viewer to:
+
+- Validate the structure
+- Beautify the output
+- Inspect it in tree view
 
 </Expandable>
 
 </ExpandableGroup>
 
-## Troubleshooting Common Errors
+## Getting started and troubleshooting
 
-Follow these steps to resolve issues:
+If you are new to JSONViewer.AI or something looks wrong, follow these quick steps.
 
 <Steps>
 
-<Step title="Check Syntax" icon="search">
+<Step title="Paste your JSON" icon="clipboard-list">
 
-Paste your JSON and scan for red highlights. Common issues include trailing commas or unquoted keys.
+Paste your JSON into the editor as plain text. Make sure you include the full object or array, not just fragments.
 
-```javascript
-// Invalid - trailing comma
+```json
 {
-  "key": "value",
-}
-
-// Valid
-{
-  "key": "value"
+  "message": "Hello, JSON!",
+  "success": true
 }
 ```
 
 </Step>
 
-<Step title="Validate Large Files" icon="upload">
+<Step title="Check for validation errors" icon="alert-triangle">
 
-Split large JSON into smaller chunks if over 10MB. Use `Load from URL` for remote data.
+Run validation or look for any highlighted errors.
+
+Common issues include:
+
+- Missing or extra commas
+- Keys not wrapped in double quotes
+- Unclosed braces or brackets
+
+Fix the highlighted area and validate again.
 
 </Step>
 
-<Step title="Clear Cache" icon="refresh-cw">
+<Step title="Switch between raw and tree views" icon="layers">
 
-Click `Clear` to reset the viewer, then reload your data.
+Use the available views to explore your data:
+
+- **Raw view** with syntax highlighting for quick edits
+- **Tree view** to expand and collapse nested sections
+
+If the tree view does not appear as expected, confirm that your JSON is valid first.
+
+</Step>
+
+<Step title="Learn more with guides" icon="book-open">
+
+If you want a step-by-step walkthrough or more examples, see:
+
+- [Introduction](/introduction) for an overview
+- [Quickstart](/quickstart) to try JSONViewer.AI in a few minutes
+- [Guide](/guide) and [Additional Guide](/additional-guide) for deeper usage tips
 
 </Step>
 
 </Steps>
 
-<Callout kind="alert">
-If errors persist, ensure your JSON matches the spec: keys in double quotes, no comments.
+<Callout kind="success">
+
+If your JSON is valid and you can see it in the tree view with syntax highlighting, JSONViewer.AI is working as intended.
+
 </Callout>
-
-## Limitations and Alternatives
-
-JSON Viewer handles most use cases but has limits.
-
-### Key Limitations
-
-| Feature | Limit | Workaround |
-|---------|-------|------------|
-| File size | 10MB | Split files or use streaming tools |
-| Nested depth | 50 levels | Flatten data for deeper structures |
-| Concurrent loads | 1 | Process one at a time |
-
-<Columns cols={2}>
-
-<Card title="Desktop Alternatives" icon="monitor" href="https://jsonhero.io">
-
-JSON Hero offers offline support and tree navigation.
-
-</Card>
-
-<Card title="CLI Tools" icon="terminal" href="https://jqplay.org">
-
-Use `jq` for command-line processing.
-
-</Card>
-
-</Columns>
-
-### Platform-Specific Tips
-
-<Tabs>
-
-<Tab title="Browser" icon="globe">
-
-Enable JavaScript. Works in Chrome, Firefox, Safari.
-
-<CodeGroup tabs="Chrome,Firefox">
-
-```bash
-# Open developer tools for large JSON
-chrome://inspect
-```
-
-```bash
-# Firefox JSON viewer
-about:preferences#privacy
-```
-
-</CodeGroup>
-
-</Tab>
-
-<Tab title="Mobile" icon="smartphone">
-
-Use landscape mode. Avoid very large files due to memory limits.
-
-</Tab>
-
-</Tabs>
-
-<Expandable title="Advanced: Custom Formatting">
-
-Customize indentation (2-4 spaces) or compact mode via settings.
-
-```json
-// Compact output
-{"id":123,"name":"Compact"}
-```
-
-</Expandable>
-
-For more, explore our [quickstart guide](/docs/quickstart).

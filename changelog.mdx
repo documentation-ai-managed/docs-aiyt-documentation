@@ -1,126 +1,144 @@
 ---
 title: Changelog
-description: Track the updates and improvements to JSON Viewer, including new features, bug fixes, and enhancements over time.
+description: Template and guidance for tracking JSONViewer.AI updates over time, including new features, fixes, and improvements.
 ---
 
 ## Overview
 
-JSON Viewer keeps evolving to help you work with JSON data more efficiently. You can review the latest releases below to see new features like advanced validation, improvements in performance for large files, and bug fixes that enhance reliability. Stay updated to leverage the newest capabilities in viewing, validating, and beautifying your JSON structures.
+Use this changelog to record how JSONViewer.AI evolves over time. Each entry should capture what changed in a given release so users can understand new capabilities, fixes, and any breaking behavior.
 
-<Columns cols={2}>
-  <Card title="Report a Bug" icon="bug" href="https://github.com/aiyt/json-viewer/issues/new?template=bug_report.md" target="_blank">
-    Found an issue? Submit it on GitHub.
-  </Card>
-  <Card title="Request a Feature" icon="sparkles" href="https://github.com/aiyt/json-viewer/issues/new?template=feature_request.md" target="_blank">
-    Suggest enhancements for future releases.
-  </Card>
-</Columns>
+This page is a **template**: it does not list real historical releases. Maintainers should replace the placeholder content below with actual release notes as new versions are published.
 
 <Callout kind="info">
-  Enable notifications on our GitHub repository to get instant alerts about new versions and important fixes.
+
+JSONViewer.AI runs fully in the browser as a free JSON viewer, validator, and beautifier. When you update behavior, performance, or UI, document it here so users know what to expect.
+
 </Callout>
 
-<Update label="2024-10-15" description="v2.1.0" tags={["feature", "improvement"]}>
+## How to use this changelog
 
-## New Features
+Use one `<Update>` block per release. For each release, try to capture:
 
-- Added tree view toggle for nested JSON navigation
-- Introduced one-click copy to clipboard for selected paths
-- Support for JSON Schema validation with custom schemas
+- **Version identifier**: a semantic version, hash, or short label.
+- **Release date**: the day the change became publicly available.
+- **Highlights**: what matters most to users (features, fixes, improvements, known issues).
+- **Impact**: anything users must do differently (for example, breaking changes or changed shortcuts).
 
-## Improvements
+<Columns cols={2}>
 
-- Enhanced beautify options with custom indentation levels
-- Faster parsing for files `>10MB`
+  <Card title="Getting started" icon="rocket" href="/quickstart">
+    New to JSONViewer.AI? Start with the quickstart, then use this changelog to see what has changed since.
+  </Card>
 
-## Bug Fixes
+  <Card title="FAQ" icon="help-circle" href="/faq">
+    For common usage questions and troubleshooting tips, see the FAQ. Use this changelog to add notes when behavior changes.
+  </Card>
 
-- Fixed collapse/expand state persistence in large objects
-- Resolved validation errors on escaped Unicode characters
+</Columns>
 
-</Update>
+## Template for maintainers
 
-<Update label="2024-09-20" description="v2.0.0" tags={["feature", "breaking"]}>
+Use the examples below as patterns. When you add real releases:
 
-## New Features
+- Replace the `label` with an ISO date (for example, `2025-01-15`).
+- Replace the `description` with your actual version or label (for example, `v1.2.0` or `Initial public release`).
+- Update the `tags` array to reflect the type of change (for example, `["feature"]`, `["bugfix", "improvement"]`, `["breaking"]`).
+- Edit or remove any sections that do not apply.
 
-- Dark mode support with automatic theme detection
-- Export beautified JSON as HTML or Markdown tables
-- Search and highlight functionality across the entire JSON
+<Callout kind="tip">
 
-## Breaking Changes
+Copy an existing `<Update>` block, paste it below the most recent one, and then edit the values. Keep the newest release at the top so users see the latest changes first.
 
-- Updated validation engine; migrate custom rules if needed
+</Callout>
 
-## Bug Fixes
+<Update label="YYYY-MM-DD" description="vX.Y.Z" tags={["feature", "improvement"]}>
 
-- Corrected rendering issues with circular references
-- Improved error messages for malformed JSON inputs
+## Summary
 
-<CodeGroup tabs="Before,After">
-```json
-// Before: Manual search needed
-{
-  "users": [
-    {"id": 1, "name": "Alice"},
-    {"id": 2, "name": "Bob"}
-  ]
-}
-```
-```json
-// After: Search "Alice" highlights instantly
-{
-  "users": [
-    {"id": 1, "name": "Alice"},
-    {"id": 2, "name": "Bob"}
-  ]
-}
-```
-</CodeGroup>
+Briefly describe the focus of this release in 1–3 sentences. For example:
 
-</Update>
+- Introduced improvements to handling large JSON files and added new viewing options.
+- Refined validation behavior and improved error messaging for invalid JSON.
 
-<Update label="2024-08-10" description="v1.5.0" tags={["bugfix", "improvement"]}>
+## New features
+
+List any new capabilities users can rely on, such as:
+
+- New ways to view or navigate JSON data.
+- Additional validation options or formats.
+- Enhancements to beautify or minify behavior.
+
+Example placeholders (replace with real items):
+
+- Added an option to adjust indentation when beautifying JSON.
+- Introduced a new panel to display validation errors alongside the source.
 
 ## Improvements
 
-- Optimized load times by 40% for medium-sized JSON files
-- Added keyboard shortcuts: Ctrl+B for beautify, Ctrl+V for validate
+Document behavior that stayed compatible but works better now, such as:
 
-## Bug Fixes
+- Performance improvements for large files.
+- UI refinements.
+- More informative messages or tooltips.
 
-- Fixed crash on empty JSON input
-- Resolved copy button failures in Internet Explorer mode
+Example placeholders:
+
+- Improved load performance for large JSON inputs.
+- Polished the layout for a clearer separation between input and output.
+
+## Bug fixes
+
+Describe user-visible bug fixes. Be specific enough that affected users can recognize their issue:
+
+- Fixed rare crashes when pasting malformed JSON.
+- Resolved incorrect highlighting for certain number formats.
+
+## Known issues (optional)
+
+If relevant, list outstanding issues users should be aware of. Remove this section when not needed.
+
+- Example: Very large JSON files may still feel slow when expanding many nested nodes.
 
 </Update>
 
-## Staying Updated
+<Update label="YYYY-MM-DD" description="Initial public release" tags={["feature"]}>
 
-Follow these steps to ensure you always use the latest version of JSON Viewer.
+## Summary
+
+Use this block for your first recorded release. Replace this text with a short description of what the initial public version of JSONViewer.AI provides.
+
+Example placeholders (replace with your real scope):
+
+- Basic JSON viewing with syntax highlighting.
+- Validation of input JSON with clear error messages.
+- Beautify and minify actions to reformat JSON.
+
+</Update>
+
+## Maintenance guidelines
 
 <Steps>
-  <Step title="Check for Updates" icon="refresh-cw">
-    Visit the [GitHub releases page](https://github.com/aiyt/json-viewer/releases) regularly.
+
+  <Step title="Add a new release entry" icon="plus">
+
+  - Duplicate the most recent `<Update>` block.
+  - Update the `label`, `description`, and `tags`.
+  - Replace the placeholder bullet points with real changes from this release.
+
   </Step>
-  <Step title="Bookmark Changelog" icon="bookmark">
-    Pin this page for quick access to version history.
+
+  <Step title="Keep entries user-focused" icon="users">
+
+  - Describe changes in terms of user impact, not only internal implementation details.
+  - Highlight anything that might change how users interact with JSONViewer.AI.
+
   </Step>
-  <Step title="Test New Features" icon="play">
-    Load your sample JSON and experiment with updates.
+
+  <Step title="Review for accuracy" icon="check-circle">
+
+  - Verify dates, version labels, and tags.
+  - Remove outdated placeholders and ensure there is no speculative or incorrect information.
+
   </Step>
+
 </Steps>
-
-## Future Plans
-
-<Expandable title="Upcoming Features" default-open="false">
-
-You can expect these enhancements in upcoming releases:
-
-- Support for JSON Patch operations
-- Real-time collaboration for shared JSON editing
-- Integration with popular IDEs like VS Code
-- Advanced diff viewer for JSON comparisons
-
-Provide feedback on GitHub to help prioritize these features.
-
-</Expandable>
