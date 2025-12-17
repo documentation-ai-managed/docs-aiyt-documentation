@@ -1,0 +1,126 @@
+---
+title: Changelog
+description: Track the updates and improvements to JSON Viewer, including new features, bug fixes, and enhancements over time.
+---
+
+## Overview
+
+JSON Viewer keeps evolving to help you work with JSON data more efficiently. You can review the latest releases below to see new features like advanced validation, improvements in performance for large files, and bug fixes that enhance reliability. Stay updated to leverage the newest capabilities in viewing, validating, and beautifying your JSON structures.
+
+<Columns cols={2}>
+  <Card title="Report a Bug" icon="bug" href="https://github.com/aiyt/json-viewer/issues/new?template=bug_report.md" target="_blank">
+    Found an issue? Submit it on GitHub.
+  </Card>
+  <Card title="Request a Feature" icon="sparkles" href="https://github.com/aiyt/json-viewer/issues/new?template=feature_request.md" target="_blank">
+    Suggest enhancements for future releases.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Enable notifications on our GitHub repository to get instant alerts about new versions and important fixes.
+</Callout>
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added tree view toggle for nested JSON navigation
+- Introduced one-click copy to clipboard for selected paths
+- Support for JSON Schema validation with custom schemas
+
+## Improvements
+
+- Enhanced beautify options with custom indentation levels
+- Faster parsing for files `>10MB`
+
+## Bug Fixes
+
+- Fixed collapse/expand state persistence in large objects
+- Resolved validation errors on escaped Unicode characters
+
+</Update>
+
+<Update label="2024-09-20" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Dark mode support with automatic theme detection
+- Export beautified JSON as HTML or Markdown tables
+- Search and highlight functionality across the entire JSON
+
+## Breaking Changes
+
+- Updated validation engine; migrate custom rules if needed
+
+## Bug Fixes
+
+- Corrected rendering issues with circular references
+- Improved error messages for malformed JSON inputs
+
+<CodeGroup tabs="Before,After">
+```json
+// Before: Manual search needed
+{
+  "users": [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+  ]
+}
+```
+```json
+// After: Search "Alice" highlights instantly
+{
+  "users": [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+  ]
+}
+```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.5.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Optimized load times by 40% for medium-sized JSON files
+- Added keyboard shortcuts: Ctrl+B for beautify, Ctrl+V for validate
+
+## Bug Fixes
+
+- Fixed crash on empty JSON input
+- Resolved copy button failures in Internet Explorer mode
+
+</Update>
+
+## Staying Updated
+
+Follow these steps to ensure you always use the latest version of JSON Viewer.
+
+<Steps>
+  <Step title="Check for Updates" icon="refresh-cw">
+    Visit the [GitHub releases page](https://github.com/aiyt/json-viewer/releases) regularly.
+  </Step>
+  <Step title="Bookmark Changelog" icon="bookmark">
+    Pin this page for quick access to version history.
+  </Step>
+  <Step title="Test New Features" icon="play">
+    Load your sample JSON and experiment with updates.
+  </Step>
+</Steps>
+
+## Future Plans
+
+<Expandable title="Upcoming Features" default-open="false">
+
+You can expect these enhancements in upcoming releases:
+
+- Support for JSON Patch operations
+- Real-time collaboration for shared JSON editing
+- Integration with popular IDEs like VS Code
+- Advanced diff viewer for JSON comparisons
+
+Provide feedback on GitHub to help prioritize these features.
+
+</Expandable>

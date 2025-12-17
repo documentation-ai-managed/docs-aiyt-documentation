@@ -1,0 +1,120 @@
+---
+title: Welcome to JSON Viewer
+description: Discover the JSON Viewer, a free online tool designed to simplify working with JSON data by providing easy viewing, validation, and beautification features.
+---
+
+## Overview
+
+JSON Viewer offers you a free online tool to view, validate, and beautify JSON data effortlessly. You paste your JSON into the editor, and it instantly formats it for readability, checks for syntax errors, and highlights structure. This eliminates manual parsing struggles, making it ideal for developers, testers, and anyone handling API responses or configuration files.
+
+<Columns cols={3}>
+  <Card title="View JSON" icon="eye" href="/docs/viewing">
+    Explore nested structures with collapsible trees and syntax highlighting.
+  </Card>
+  <Card title="Validate JSON" icon="check-circle" href="/docs/validation">
+    Detect errors instantly and get precise line numbers for fixes.
+  </Card>
+  <Card title="Beautify JSON" icon="sparkles" href="/docs/beautify">
+    Transform minified JSON into readable, indented format in one click.
+  </Card>
+</Columns>
+
+## Key Benefits
+
+You gain several advantages using JSON Viewer:
+
+- **Speed**: Process large JSON files without downloads or installations.
+- **Accuracy**: Real-time validation catches errors like missing commas or invalid keys.
+- **Simplicity**: No account required; access features immediately in your browser.
+- **Portability**: Works on any device with a modern browser.
+
+<Callout kind="success">
+  JSON Viewer is completely free with no usage limits or hidden fees.
+</Callout>
+
+## Quick Start
+
+Follow these steps to get started with your JSON data:
+
+<Steps>
+  <Step title="Paste Your JSON" icon="clipboard">
+    Copy JSON from APIs, logs, or files and paste it into the input area.
+  </Step>
+  <Step title="View and Navigate" icon="zoom-in">
+    Use the tree view to expand/collapse objects and arrays.
+  </Step>
+  <Step title="Validate" icon="shield">
+    Click Validate to scan for errors. Fix issues using highlighted feedback.
+  </Step>
+  <Step title="Beautify" icon="magic">
+    Select Beautify to reformat. Copy the output for use elsewhere.
+  </Step>
+</Steps>
+
+## Common Use Cases
+
+Switch between modes based on your needs:
+
+<Tabs>
+  <Tab title="API Response" icon="cloud">
+    Handle responses like this unformatted data:
+    
+````javascript
+const apiResponse=`{"user":{"id":123,"name":"Alice Johnson","email":"alice@example.com","orders":[{"id":456,"total":99.99},{"id":789,"total":149.99}]}}`;
+````
+
+    JSON Viewer expands it into a navigable tree.
+  </Tab>
+  <Tab title="Config File" icon="settings">
+    Beautify settings:
+    
+````json
+{"database":{"host":"localhost","port":5432,"credentials":{"user":"admin","pass":"secret"}},"cache":{"enabled":true,"ttl":3600}}
+````
+  </Tab>
+  <Tab title="Error Validation" icon="alert-triangle">
+    Spot issues in malformed JSON:
+    
+````json
+{"items": [1,2,3 "four", 5]}  // Missing comma detected
+````
+  </Tab>
+</Tabs>
+
+## Before and After Beautification
+
+See the transformation power:
+
+<CodeGroup tabs="Raw,Beautified">
+  ```json
+{"results":[{"id":1,"title":"Sample Post","views":150},{"id":2,"title":"Another Post","views":250},{"id":3,"title":"Final Post","views":300}],"total":3}
+  ```
+  ```json
+{
+  "results": [
+    {
+      "id": 1,
+      "title": "Sample Post",
+      "views": 150
+    },
+    {
+      "id": 2,
+      "title": "Another Post",
+      "views": 250
+    },
+    {
+      "id": 3,
+      "title": "Final Post",
+      "views": 300
+    }
+  ],
+  "total": 3
+}
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced Tips" default-open="false">
+  Customize indentation (2-4 spaces), toggle line numbers, or export as JSON/CSV. For huge payloads `{>1MB}`, enable streaming mode to avoid browser lag.
+</Expandable>
+
+JSON Viewer streamlines your workflow, saving time on tedious JSON tasks. Start using it today for cleaner data handling.

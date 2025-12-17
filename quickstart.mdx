@@ -1,0 +1,117 @@
+---
+title: Getting Started with JSON Viewer
+description: Learn how to quickly access and use the JSON Viewer tool to start working with your JSON data in just a few steps.
+---
+
+## Quick Start
+
+Access the JSON Viewer tool online to view, validate, and beautify your JSON data effortlessly. Follow these steps to get started immediately.
+
+<Steps>
+  <Step title="Access the Tool" icon="globe">
+    Open your web browser and navigate to the [JSON Viewer](https://jsonviewer.aiyt.com). No installation or account required—start using it right away.
+  </Step>
+  <Step title="Input Your JSON" icon="upload">
+    Paste your JSON data directly into the editor or upload a `.json` file using the upload button. The tool supports data up to `{10MB}` in size.
+  </Step>
+  <Step title="View and Beautify" icon="zap">
+    Click **Beautify** to format the JSON with proper indentation. Use the tree view on the right to expand and collapse nested objects.
+  </Step>
+  <Step title="Validate and Copy" icon="check-circle">
+    The tool automatically validates your JSON. Fix any errors shown in red, then copy the beautified version or download it as a file.
+  </Step>
+</Steps>
+
+## Input Methods
+
+Choose your preferred way to add JSON data.
+
+<Tabs>
+  <Tab title="Paste JSON" icon="clipboard">
+    Copy JSON from your code editor, API response, or log file and paste it into the main editor.
+
+    <CodeGroup tabs="Simple,Nested">
+```json
+{
+  "name": "Alice Johnson",
+  "email": "alice@example.com",
+  "age": 30
+}
+```
+```json
+{
+  "user": {
+    "profile": {
+      "name": "Bob Smith",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    },
+    "roles": ["admin", "user"]
+  }
+}
+```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Upload File" icon="upload">
+    Drag and drop a JSON file or click **Browse** to select one from your device. Supports common formats like application/json.
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  For large JSON files `{>1MB}`, enable **Lazy Loading** in settings to improve performance.
+</Callout>
+
+## Interface Overview
+
+The interface includes:
+
+- **Editor Panel (Left)**: Raw or beautified JSON with syntax highlighting.
+- **Tree Navigator (Right)**: Collapsible tree for easy navigation of deep structures.
+- **Validation Bar (Bottom)**: Shows errors, warnings, and stats like object count.
+
+| Feature          | Description                          | Shortcut     |
+|------------------|--------------------------------------|--------------|
+| Beautify         | Formats with 2-space indentation     | `Ctrl+B`    |
+| Minify           | Removes all whitespace               | `Ctrl+M`    |
+| Validate         | Checks syntax and reports errors     | `Ctrl+V`    |
+| Copy             | Copies formatted JSON to clipboard   | `Ctrl+C`    |
+| Download         | Saves as `.json` file                | `Ctrl+S`    |
+
+## Next Steps
+
+Explore more features once you're comfortable.
+
+<Columns cols={3}>
+  <Card title="Advanced Validation" icon="shield-check" href="/docs/validation">
+    Detect schema mismatches and custom rules.
+  </Card>
+  <Card title="Search & Filter" icon="search" href="/docs/search">
+    Quickly find keys or values in large datasets.
+  </Card>
+  <Card title="Export Options" icon="download" href="/docs/export">
+    Convert to CSV, XML, or share via link.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+If you encounter parsing errors:
+
+1. Ensure no trailing commas in arrays or objects.
+2. Check for unescaped quotes inside strings.
+3. Use the **Raw Mode** toggle for malformed input.
+
+Example error JSON:
+```json
+{
+  "items": [1, 2, 3,]  // Trailing comma error
+}
+```
+
+</Expandable>
+
+<Callout kind="success">
+  You've now mastered the basics! Your JSON data is ready to view, validate, and beautify in seconds.
+</Callout>

@@ -1,0 +1,165 @@
+---
+title: Frequently Asked Questions
+description: Find answers to common questions about using JSON Viewer, troubleshooting issues, and best practices for handling JSON data.
+---
+
+## Common Usage Questions
+
+JSON Viewer helps you parse, validate, and format JSON data quickly. Use it to inspect API responses or debug nested objects.
+
+<ExpandableGroup>
+
+<Expandable title="What types of JSON can I view?">
+
+You can load any valid JSON, including arrays, objects, and nested structures from APIs or files. Paste raw text or upload `.json` files up to 10MB.
+
+For example, view this user profile:
+
+```json
+{
+  "user": {
+    "id": 12345,
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "preferences": {
+      "theme": "dark",
+      "notifications": true
+    }
+  }
+}
+```
+
+</Expandable>
+
+<Expandable title="How do I beautify unformatted JSON?">
+
+Copy and paste minified JSON into the editor. Click `Beautify` to add indentation and line breaks automatically.
+
+<Callout kind="tip">
+Enable `Auto-format on paste` in settings for instant beautification.
+</Callout>
+
+</Expandable>
+
+<Expandable title="Does it support JSON validation?">
+
+Yes, validation runs in real-time. Errors highlight in red with details like `Unexpected token at line 5`.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Troubleshooting Common Errors
+
+Follow these steps to resolve issues:
+
+<Steps>
+
+<Step title="Check Syntax" icon="search">
+
+Paste your JSON and scan for red highlights. Common issues include trailing commas or unquoted keys.
+
+```javascript
+// Invalid - trailing comma
+{
+  "key": "value",
+}
+
+// Valid
+{
+  "key": "value"
+}
+```
+
+</Step>
+
+<Step title="Validate Large Files" icon="upload">
+
+Split large JSON into smaller chunks if over 10MB. Use `Load from URL` for remote data.
+
+</Step>
+
+<Step title="Clear Cache" icon="refresh-cw">
+
+Click `Clear` to reset the viewer, then reload your data.
+
+</Step>
+
+</Steps>
+
+<Callout kind="alert">
+If errors persist, ensure your JSON matches the spec: keys in double quotes, no comments.
+</Callout>
+
+## Limitations and Alternatives
+
+JSON Viewer handles most use cases but has limits.
+
+### Key Limitations
+
+| Feature | Limit | Workaround |
+|---------|-------|------------|
+| File size | 10MB | Split files or use streaming tools |
+| Nested depth | 50 levels | Flatten data for deeper structures |
+| Concurrent loads | 1 | Process one at a time |
+
+<Columns cols={2}>
+
+<Card title="Desktop Alternatives" icon="monitor" href="https://jsonhero.io">
+
+JSON Hero offers offline support and tree navigation.
+
+</Card>
+
+<Card title="CLI Tools" icon="terminal" href="https://jqplay.org">
+
+Use `jq` for command-line processing.
+
+</Card>
+
+</Columns>
+
+### Platform-Specific Tips
+
+<Tabs>
+
+<Tab title="Browser" icon="globe">
+
+Enable JavaScript. Works in Chrome, Firefox, Safari.
+
+<CodeGroup tabs="Chrome,Firefox">
+
+```bash
+# Open developer tools for large JSON
+chrome://inspect
+```
+
+```bash
+# Firefox JSON viewer
+about:preferences#privacy
+```
+
+</CodeGroup>
+
+</Tab>
+
+<Tab title="Mobile" icon="smartphone">
+
+Use landscape mode. Avoid very large files due to memory limits.
+
+</Tab>
+
+</Tabs>
+
+<Expandable title="Advanced: Custom Formatting">
+
+Customize indentation (2-4 spaces) or compact mode via settings.
+
+```json
+// Compact output
+{"id":123,"name":"Compact"}
+```
+
+</Expandable>
+
+For more, explore our [quickstart guide](/docs/quickstart).
